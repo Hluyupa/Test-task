@@ -1,0 +1,238 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+:root {
+    --main-text-color:#FFFFFF;
+    --second-text-color:#797EA3;
+    --third-text-color:#B9BEE5;
+    --gray: #2C2F47;
+    --dark-gray:#171929;
+    --text-input-border-color:#3F4363;
+    --target-color:#2C2F47;
+}
+
+@media (max-width: 320px){
+    .layout{
+        height: 770px;
+        max-width: 389px;
+        min-width: 389px;
+    }
+}
+
+*{
+    font-family: 'Roboto';
+}
+
+p, form{
+    padding: 0;
+    margin: 0;
+}
+
+html, body{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    background-image: url("./Resources/cosmos.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.layout{
+    height: auto;
+    width: 389px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns:1fr;
+        grid-template: auto 1fr/1fr;
+        grid-template-areas: 
+        "title"
+        "registration-form";
+}
+
+.title{
+    
+    -ms-grid-row: 1;
+    
+    -ms-grid-column: 1;
+    
+    grid-area: title;
+    text-align: center;
+    color: var(--main-text-color);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 55px;
+    line-height: 120%;
+}
+
+.registration-form{
+    
+    -ms-grid-row: 2;
+    
+    -ms-grid-column: 1;
+    
+    padding: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: var(--dark-gray);
+    grid-area: registration-form;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.7);
+            box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.7);
+    border-radius: 27px;
+    
+}
+
+.registration-form p:first-child{
+    text-align: center;
+    color: var(--main-text-color);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+    margin-bottom: 11px;
+}
+
+.registration-form p:nth-child(2){
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    color:var(--second-text-color);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 18px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.text-field{
+    margin-bottom: 38px;
+    width: 100%;
+}
+
+.text-field > label{
+ 
+    display: block;
+    color: var(--second-text-color);
+    font-weight: 300;
+    font-size: 15px;
+    margin-bottom: 0.5em;
+}
+
+.text-field > input{
+    padding-bottom: 2px;
+    
+    outline: none;
+    color: var(--main-text-color);
+    display: block;
+    width: 100%;
+    height: calc(1em + 2px);
+    font-weight: 400;
+    font-size: 18px;
+    background-color: transparent;
+    border: 0px;
+    border-bottom: 1px solid var(--text-input-border-color);
+}
+
+
+.text-field > input:focus, .text-field > input:active{
+ 
+    border-bottom: 1px solid var(--main-text-color);
+}
+
+.checkbox-field > input{
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.checkbox-field >input+label {
+    
+    display: -webkit-inline-box;
+    
+    display: -ms-inline-flexbox;
+    
+    display: inline-flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 15px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    font-weight: 300;
+    color: var(--second-text-color);
+}
+
+.checkbox-field > label a{
+    color: var(--third-text-color);
+   
+    border-bottom: 1px solid var(--third-text-color);
+}
+
+.checkbox-field > input+label::before{
+    content: '';
+    display: inline-block;
+    width: 31px;
+    height: 31px;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    background-color: var(--target-color);
+    background-image: url("./Resources/checkBoxCheckedImage.png");
+    border-radius: 8px;
+    margin-right: 12px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+
+}
+.checkbox-field>input:checked+label::before{
+    background-image: url("./Resources/checkBoxCheckedImage.png");
+}
+
+.sendButton{
+    background-color: var(--target-color);
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    width: 121px;
+    height: 44px;
+    margin-top: 36px;
+    border: 0px;
+    border-radius: 100px;
+    color: var(--main-text-color);
+    font-size: 18px;
+}
+
